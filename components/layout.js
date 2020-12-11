@@ -1,8 +1,15 @@
 import Link from "next/Link";
+import Head from "next/head";
 
 export default function Layout({ children, home }) {
     return (
         <div className="min-h-screen bg-gray-50">
+            <Head>
+                <link rel="icon" href="/favicon.png" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet"></link>
+                <meta name="description" content="Support local Grande Prairie businesses by purchasing gift cards" />
+            </Head>
             <header className="bg-gradient-to-r from-gpred to-gpred-light">
             <div className="max-w-5xl mx-auto px-4 -mb-36 pb-36">
             <div className="pt-8 mb-12 flex flex-col items-center md:items-start md:flex-row md:justify-between">
