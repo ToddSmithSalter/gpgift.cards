@@ -1,3 +1,5 @@
+import Link from "next/Link";
+
 export default function Layout({ children, home }) {
     return (
         <div className="min-h-screen bg-gray-50">
@@ -17,7 +19,9 @@ export default function Layout({ children, home }) {
                 </a>
                 </div>
                 <div>
-                <a href="/" className="inline-block text-gpred uppercase font-bold bg-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity">Add A Business</a>
+                <Link href={home ? '/add-business' : '/'}>
+                    <a className="inline-block text-gpred uppercase font-bold bg-white px-6 py-3 rounded-full hover:opacity-90 transition-opacity">{home ?'Add A Business' : 'View All Businesses'}</a>
+                </Link>
                 </div>
             </div>
             {home ? (
@@ -29,9 +33,6 @@ export default function Layout({ children, home }) {
                 </>
             ) : (
                 <>
-
-
-
                 </>
             )}
 
