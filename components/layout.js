@@ -9,6 +9,10 @@ export default function Layout({ children, home }) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet"></link>
                 <meta name="description" content="Support local Grande Prairie businesses by purchasing gift cards" />
+                <meta name="og:image" content="/opengraph.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:creator" content="@ToddSmithSalter" />
+                <meta name="twitter:image" content="/twitter.png" />
             </Head>
             <header className="bg-gradient-to-r from-gpred to-gpred-light">
             <div className="max-w-5xl mx-auto px-4 -mb-36 pb-36">
