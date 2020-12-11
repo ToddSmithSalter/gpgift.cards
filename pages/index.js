@@ -1,65 +1,45 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/layout';
+import getBusinesses from '../lib/airtable';
 
-export default function Home() {
+export default function Home({ businesses }) {
   return (
-    <div className={styles.container}>
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
+        <title>Grande Prairie Gift Cards - Support Local Business</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <ul>
+        {businesses.map((business, index) => (
+          <li key={index} className="flex pb-12 flex-col md:flex-row md:justify-between">
+          <div>
+            <h3 className="mb-2 font-heading text-2xl md:text-4xl">{business.fields['Business Name']}</h3>
+            <div className="text-gray-400">{business.fields['Type']}</div>
+          </div>
+          <div className="flex-shrink-0 pt-4 md:pt-0 md:ml-4">
+            <a href={business.fields['Purchase Link']} target="_blank" className="inline-flex uppercase font-bold bg-white border px-6 py-3 rounded-full hover:bg-gpred hover:text-white hover:border-gpred transition">
+              <div className="h-5 w-5 mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                </svg>
+              </div>
+              Buy Gift Cards
+            </a>
+          </div>
+        </li>
+        ))}
+      </ul>
+    </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const businesses = await getBusinesses();
+
+  return {
+    props: { businesses, revalidate: 1, }
+  }
 }
