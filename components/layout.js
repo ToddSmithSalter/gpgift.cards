@@ -9,7 +9,11 @@ export default function Layout({ children, home }) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet"></link>
                 <meta name="description" content="Support local Grande Prairie businesses by purchasing gift cards" />
+                <meta name="og:title" content="Support Local - Grande Prairie Gift Cards" />
+                <meta name="og:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
                 <meta name="og:image" content="/opengraph.png" />
+                <meta name="twitter:title" content="Support Local - Grande Prairie Gift Cards" />
+                <meta name="twitter:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:creator" content="@ToddSmithSalter" />
                 <meta name="twitter:image" content="/twitter.png" />
