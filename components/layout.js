@@ -11,12 +11,12 @@ export default function Layout({ children, home }) {
                 <meta name="description" content="Support local Grande Prairie businesses by purchasing gift cards" />
                 <meta name="og:title" content="Support Local - Grande Prairie Gift Cards" />
                 <meta name="og:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
-                <meta name="og:image" content="/opengraph.png" />
+                <meta name="og:image" content="https://gpgift.cards/opengraph.png" />
                 <meta name="twitter:title" content="Support Local - Grande Prairie Gift Cards" />
                 <meta name="twitter:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:creator" content="@ToddSmithSalter" />
-                <meta name="twitter:image" content="/twitter.png" />
+                <meta name="twitter:image" content="https://gpgift.cards/twitter.png" />
             </Head>
             <header className="bg-gradient-to-r from-gpred to-gpred-light">
             <div className="max-w-5xl mx-auto px-4 -mb-36 pb-36">
