@@ -9,14 +9,19 @@ export default function Layout({ children, home }) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet"></link>
                 <meta name="description" content="Support local Grande Prairie businesses by purchasing gift cards" />
-                <meta name="og:title" content="Support Local - Grande Prairie Gift Cards" />
-                <meta name="og:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
-                <meta name="og:image" content="https://gpgift.cards/opengraph.png" />
-                <meta name="twitter:title" content="Support Local - Grande Prairie Gift Cards" />
-                <meta name="twitter:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
+
+                {/* Facebook Meta Tags */}
+                <meta proprerty="og:title" content="Support Local - Grande Prairie Gift Cards" />
+                <meta property="og:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
+                <meta property="og:image" content="/opengraph.png" />
+
+                {/* Twitter Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Support Local - Grande Prairie Gift Cards" />
+                <meta name="twitter:domain" content="gpgift.cards" />
+                <meta name="twitter:description" content="Support local Grande Prairie businesses by purchasing gift cards" />
                 <meta name="twitter:creator" content="@ToddSmithSalter" />
-                <meta name="twitter:image" content="https://gpgift.cards/twitter.png" />
+                <meta name="twitter:image" content="/twitter.png" />
             </Head>
             <header className="bg-gradient-to-r from-gpred to-gpred-light">
             <div className="max-w-5xl mx-auto px-4 -mb-36 pb-36">
