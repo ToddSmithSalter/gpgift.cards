@@ -40,6 +40,9 @@ export async function getStaticProps(context) {
   const businesses = await getBusinesses();
 
   return {
-    props: { businesses, revalidate: 1, }
+    props: {
+      businesses,
+    },
+    revalidate: 1,
   }
 }
